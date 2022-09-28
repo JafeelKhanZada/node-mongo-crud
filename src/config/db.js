@@ -6,13 +6,10 @@ class DBConfig {
   }
   connections() {
     return mongoose
-      .connect(
-        process.env.DBURL || "mongodb+srv://jafeel:jafeel@cluster0.hsum6v",
-        {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-        }
-      )
+      .connect(process.env.DBURL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
       .then(() => {
         console.log("MONGO CONNECTED!");
       })
